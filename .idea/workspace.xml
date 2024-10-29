@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48af8f93-7326-499e-9c56-89fec727f0b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Lexique383.tsv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/README-Lexique.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/liste-mots-alphabetique.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate_list_valid_words.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hangman.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solver.py" afterDir="false" />
-    </list>
+    <list default="true" id="48af8f93-7326-499e-9c56-89fec727f0b0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,8 +84,9 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
