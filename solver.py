@@ -2,7 +2,6 @@ import math
 from copy import copy
 from typing import List, Tuple, Dict
 
-
 def generate_valid_words(
         possible_words: List[str],
         letters_in_secret: List[Tuple[str, int]],
@@ -26,7 +25,6 @@ def generate_valid_words(
 
     return valid_words
 
-
 def generate_best_letters(
         possible_words: List[str],
         letters_not_played: List[str],
@@ -40,6 +38,9 @@ def generate_best_letters(
         total_count = 0
 
         for secret_word in possible_words:
+            if letter not in secret_word:
+                continue
+
             filtered_words = generate_valid_words(
                 possible_words,
                 letters_in_secret + [(letter, secret_word.index(letter))],
@@ -50,6 +51,9 @@ def generate_best_letters(
         average_possibilities = total_count / num_possible_words if num_possible_words > 0 else 0
         total_possibilities[letter] = average_possibilities
 
-    best_letter = min(total_possibilities, key=total_possibilities.get)
-
-    return best_letter
+    if total_possibilities:
+        best_letter = max(total_possibilities, key=total_possibilities.get)
+        worst_letter = min(total_possibilities, key=total_possibilities.get)
+        return (f"Je te conseille : {best_letter} mais pas : {worst_letter}")
+    else:
+        return ""
