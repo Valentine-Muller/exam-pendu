@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>generate_dicts &mdash; exampendu  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            exampendu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">exampendu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">generate_dicts</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for generate_dicts</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Depuis le fichier liste_mots.txt, on récupère tous les mots de 6,7,8,9,10 lettres.</span>
+<span class="sd">et on génère 5 fichiers textes contenant les mots en fonction de leur taille (un mot par ligne, séparé par un \n):</span>
+<span class="sd">dico_6_lettres.txt</span>
+<span class="sd">dico_7_lettres.txt</span>
+<span class="sd">dico_8_lettres.txt</span>
+<span class="sd">dico_9_lettres.txt</span>
+<span class="sd">dico_10_lettres.txt</span>
+<span class="sd">On enlève les accents, les espaces, les tirets et les mots en double.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">unicodedata</span>
+
+<div class="viewcode-block" id="lire_filtrer_mots">
+<a class="viewcode-back" href="../generate_dicts.html#generate_dicts.lire_filtrer_mots">[docs]</a>
+<span class="k">def</span> <span class="nf">lire_filtrer_mots</span><span class="p">(</span><span class="n">chemin_lexique</span><span class="p">,</span> <span class="n">longueur</span><span class="p">):</span>
+    <span class="n">mots_uniques</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">chemin_lexique</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">fichier</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">ligne</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+                <span class="n">mot_nettoye</span> <span class="o">=</span> <span class="n">mot</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">mot_nettoye</span> <span class="o">=</span> <span class="n">mot_nettoye</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">mot_nettoye</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">mot_nettoye</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="o">.</span><span class="n">isspace</span><span class="p">())</span>
+                <span class="n">mot_nettoye</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFKD&#39;</span><span class="p">,</span> <span class="n">mot_nettoye</span><span class="p">)</span>
+                <span class="n">mot_nettoye</span> <span class="o">=</span> <span class="n">mot_nettoye</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ASCII&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mot_nettoye</span><span class="p">)</span> <span class="o">==</span> <span class="n">longueur</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">mot_nettoye</span><span class="p">):</span>
+                    <span class="n">mots_uniques</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mot_nettoye</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">mots_uniques</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ecrire_liste_mots">
+<a class="viewcode-back" href="../generate_dicts.html#generate_dicts.ecrire_liste_mots">[docs]</a>
+<span class="k">def</span> <span class="nf">ecrire_liste_mots</span><span class="p">(</span><span class="n">liste_mots</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span> <span class="n">longueur</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Génère un fichier texte contenant tous les mots pour une longueur donné&quot;&quot;&quot;</span>
+
+    <span class="n">chemin_dico_ecriture</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;data/dico_</span><span class="si">{</span><span class="n">longueur</span><span class="si">}</span><span class="s2">_lettres.txt&quot;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">chemin_dico_ecriture</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mot</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">liste_mots</span><span class="p">)</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../generate_dicts.html#generate_dicts.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">chemin</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">long</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+        <span class="c1"># génère la liste de mot pour la longueur donné</span>
+        <span class="n">lst_mots</span> <span class="o">=</span> <span class="n">lire_filtrer_mots</span><span class="p">(</span><span class="n">chemin_lexique</span><span class="o">=</span><span class="n">chemin</span><span class="p">,</span> <span class="n">longueur</span><span class="o">=</span><span class="n">long</span><span class="p">)</span>
+
+        <span class="c1"># Génère un fichier texte correspondant</span>
+        <span class="n">ecrire_liste_mots</span><span class="p">(</span><span class="n">lst_mots</span><span class="p">,</span> <span class="n">longueur</span><span class="o">=</span><span class="n">long</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">chemin</span> <span class="o">=</span> <span class="s2">&quot;data/liste_mots.txt&quot;</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">chemin</span><span class="o">=</span> <span class="n">chemin</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, valentine.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
