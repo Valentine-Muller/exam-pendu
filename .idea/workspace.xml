@@ -5,20 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48af8f93-7326-499e-9c56-89fec727f0b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Lexique383.tsv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/README-Lexique.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/liste-mots-alphabetique.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate_list_valid_words.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hangman.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictures/Hangman-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/generate_dicts.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/generate_dicts.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/hangman.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/hangman.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/solver.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/solver.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/tests.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/tests.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/_sources/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/generate_dicts.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/generate_dicts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/hangman.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/hangman.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/modules.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/modules.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/py-modindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/py-modindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/solver.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/solver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/tests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/source/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/doc/source/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/source/hangman.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/source/hangman.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/source/modules.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/source/modules.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +75,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.hangman">
+  <component name="RunManager">
     <configuration name="generate_list_valid_words" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SolverPendu" />
       <option name="ENV_FILES" value="" />

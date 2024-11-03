@@ -1,10 +1,7 @@
 hangman module
 ==============
 
-.. autoclass:: hangman.HangmanGame
+.. automodule:: hangman
    :members:
    :undoc-members:
-   :special-members: __init__
    :show-inheritance:
-   :private-members:
-   

@@ -4,7 +4,7 @@ import sys
 
 
 # Le chemin vers le dossier contenant les fichiers .py que l'on veut documenter.
-sys.path.insert(0, os.path.abspath('../'))  # Remplacez '../' par le chemin approprié
+sys.path.insert(0, os.path.abspath('Users/vaval/Documents/exam-pendu/generate_dicts.py'))  # Remplacez '../' par le chemin approprié
 
 # Configuration file for the Sphinx documentation builder.
 project = 'exampendu'
