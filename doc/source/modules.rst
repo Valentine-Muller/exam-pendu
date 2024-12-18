@@ -7,4 +7,3 @@ exam-pendu
    generate_dicts
    hangman
    solver
-   tests
