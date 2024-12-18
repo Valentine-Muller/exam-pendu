@@ -1,5 +1,5 @@
 Jeu du Pendu
-==============
+======================
 
 .. autoclass:: hangman.HangmanGame
    :members:

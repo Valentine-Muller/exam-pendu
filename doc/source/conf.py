@@ -1,30 +1,43 @@
-import os
-import sys
-# import pygame
-
-
-# Le chemin vers le dossier contenant les fichiers .py que l'on veut documenter.
-sys.path.insert(0, os.path.abspath('Users/vaval/Documents/exam-pendu/generate_dicts.py'))  # Remplacez '../' par le chemin approprié
-
 # Configuration file for the Sphinx documentation builder.
-project = 'exampendu'
+#
+# For the full list of built-in configuration values, see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+# -- Project information -----------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+
+project = 'pendu'
 copyright = '2024, valentine'
 author = 'valentine'
 
-# Extensions à utiliser
+# -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.intersphinx',
-    "sphinx_autodoc_typehints"
+    'sphinx.ext.autodoc',   # Génère automatiquement la documentation à partir des docstrings Python (par ex. palin.py)
+    'sphinx.ext.napoleon',  # Supporte les styles de docstrings NumPy et Google
+    'sphinx.ext.viewcode',  # Ajoute des liens vers le code source dans la documentation générée
+    'sphinx.ext.intersphinx',  # Permet de créer des liens vers la documentation d'autres projets externes
+    "sphinx_autodoc_typehints"  # Inclut automatiquement les annotations de types Python dans la documentation
 ]
 
 templates_path = ['_templates']
 exclude_patterns = []
 
-# Options pour la sortie HTML
-napoleon_google_docstring = True
+language = 'fr'
+
+# -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+import os
+import sys
+## Le chemin depuis conf.py vers les fichiers .py que l'on veut documenter.
+sys.path.insert(0, os.path.abspath('../../'))
+
+napoleon_google_docstring = True
+napoleon_numpy_docstring = False
+
 add_module_names = False
