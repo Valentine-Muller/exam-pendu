@@ -1,6 +1,6 @@
 const themeFlyoutDisplay = "hidden";
-const themeVersionSelector = "True";
-const themeLanguageSelector = "True";
+const themeVersionSelector = true;
+const themeLanguageSelector = true;
 
 if (themeFlyoutDisplay === "attached") {
   function renderLanguages(config) {
@@ -8,10 +8,14 @@ if (themeFlyoutDisplay === "attached") {
       return "";
     }
 
+    // Insert the current language to the options on the selector
+    let languages = config.projects.translations.concat(config.projects.current);
+    languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
+
     const languagesHTML = `
       <dl>
         <dt>Languages</dt>
-        ${config.projects.translations
+        ${languages
           .map(
             (translation) => `
         <dd ${translation.slug == config.projects.current.slug ? 'class="rtd-current-item"' : ""}>
@@ -58,7 +62,7 @@ if (themeFlyoutDisplay === "attached") {
 
     const downloadsHTML = `
       <dl>
-        <dt>Downloads</dt>
+        <dt>Téléchargements</dt>
         ${Object.entries(config.versions.current.downloads)
           .map(
             ([name, url]) => `
@@ -89,27 +93,27 @@ if (themeFlyoutDisplay === "attached") {
             ${renderVersions(config)}
             ${renderDownloads(config)}
             <dl>
-              <dt>On Read the Docs</dt>
+              <dt>À propos de Read the Docs</dt>
               <dd>
-                <a href="${config.projects.current.urls.home}">Project Home</a>
+                <a href="${config.projects.current.urls.home}">Accueil du projet</a>
               </dd>
               <dd>
-                <a href="${config.projects.current.urls.builds}">Builds</a>
+                <a href="${config.projects.current.urls.builds}">Compilations</a>
               </dd>
               <dd>
-                <a href="${config.projects.current.urls.downloads}">Downloads</a>
+                <a href="${config.projects.current.urls.downloads}">Téléchargements</a>
               </dd>
             </dl>
             <dl>
-              <dt>Search</dt>
+              <dt>Recherche</dt>
               <dd>
                 <form id="flyout-search-form">
                   <input
                     class="wy-form"
                     type="text"
                     name="q"
-                    aria-label="Search docs"
-                    placeholder="Search docs"
+                    aria-label="Rechercher docs"
+                    placeholder="Rechercher docs"
                     />
                 </form>
               </dd>
